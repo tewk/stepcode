@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <fstream>
-using namespace std;
 
 extern "C"
 {
@@ -126,8 +125,8 @@ class EntList {
         friend class OrList;
         friend class ComplexList;
         friend class ComplexCollect;
-        friend ostream & operator<< ( ostream &, EntList & );
-        friend ostream & operator<< ( ostream &, MultList & );
+        friend std::ostream & operator<< ( std::ostream &, EntList & );
+        friend std::ostream & operator<< ( std::ostream &, MultList & );
 
     public:
         EntList( JoinType j ) : join( j ), prev( 0 ), next( 0 ), viable( UNKNOWN ),
@@ -195,7 +194,7 @@ class EntList {
 
 class SimpleList : public EntList {
         friend class ComplexList;
-        friend ostream & operator<< ( ostream &, SimpleList & );
+        friend std::ostream & operator<< ( std::ostream &, SimpleList & );
 
     public:
         SimpleList( const char * n ) : EntList( SIMPLE ), I_marked( NOMARK ) {

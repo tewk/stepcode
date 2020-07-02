@@ -140,7 +140,9 @@ if(NOT SC_IS_SUBBUILD)
   endif(NOT WIN32)
   set(SC_INSTALL_PREFIX ${SC_INSTALL_PREFIX} CACHE
     PATH "Install prefix prepended to target to create install location")
+  if( NOT CMAKE_INSTALL_PREFIX )
   set(CMAKE_INSTALL_PREFIX ${SC_INSTALL_PREFIX} CACHE INTERNAL "Prefix prepended to install directories if target destination is not absolute, immutable" FORCE)
+  endif()
 
   #-----------------------------------------------------------------------------
   # SC Packaging
